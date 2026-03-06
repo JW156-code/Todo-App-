@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task Manager OOP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-home-page.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Task Manager</h1>
+        <button id="logout-btn" class="btn btn-danger">Déconnexion</button>
+        <p>Gère tes tâches avec des classes JavaScript (Task & TaskManager)</p>
+      </header>
+
+      <main class="app-main">
+        
+        <section class="task-form-section">
+          <h2>Nouvelle tâche</h2>
+          <form id="task-form" class="task-form">
+           
+            <div class="form-group">
+              <label for="task-name">Nom de la tâche *</label>
+              <input
+                type="text"
+                id="task-name"
+                class="input"
+                placeholder="Ex: Finir l'app"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="task-deadline">Deadline *</label>
+              <input type="date" id="task-deadline" class="input" required />
+            </div>
+
+           
+            <div class="form-group">
+              <label for="task-priority">Priorité *</label>
+              <select id="task-priority" class="input" required>
+                <option value="high">Haute</option>
+                <option value="medium" selected>Moyenne</option>
+                <option value="low">Basse</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="task-description">Description</label>
+              <textarea
+                id="task-description"
+                class="input textarea"
+                rows="3"
+                placeholder="Ex: Je dois finir la section header et corriger les bugs..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Ajouter la tâche
+            </button>
+          </form>
+        </section>
+
+        <section class="task-list-section">
+          <div class="task-list-header">
+            <h2>Mes tâches</h2>
+
+            <div class="task-filters">
+              <button class="btn btn-ghost" id="filter-all">Toutes</button>
+              <button class="btn btn-ghost" id="filter-active">À faire</button>
+              <button class="btn btn-ghost" id="filter-completed">
+                Terminées
+              </button>
+            </div>
+          </div>
+
+          <ul id="task-list" class="task-list"></ul>
+
+          <template id="task-item-template">
+            <li class="task-item">
+              <div class="task-main">
+                <label class="task-checkbox-wrapper">
+                  <input type="checkbox" class="task-checkbox" />
+                  <span class="task-name"></span>
+                </label>
+                <span class="task-priority-badge"></span>
+              </div>
+
+              <div class="task-meta">
+                <span class="task-deadline-label"></span>
+                <span class="task-created-label"></span>
+              </div>
+
+              <p class="task-description-text"></p>
+
+              <div class="task-actions">
+                <button class="btn btn-small btn-outline task-edit-btn">
+                  Éditer
+                </button>
+                <button class="btn btn-small btn-danger task-delete-btn">
+                  Supprimer
+                </button>
+              </div>
+            </li>
+          </template>
+        </section>
+      </main>
+    </div>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
