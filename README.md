@@ -69,6 +69,4 @@ Ce projet m'a permis de pratiquer :
 
 # 👤 Auteur
 
-Nom : weiss 
-
 GitHub : https://github.com/JW156-code
